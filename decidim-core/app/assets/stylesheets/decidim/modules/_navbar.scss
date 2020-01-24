@@ -1,20 +1,26 @@
 /* Variables */
 
-$navbar-bg: $dark-gray;
+$navbar-bg: $white; //$dark-gray;
 $navbar-bg-hover: rgba(white, 0.02);
-$navbar-color: rgba(white, 0.85);
-$navbar-color-hover: $white;
-$navbar-active-color: $white;
+$navbar-color: $dark-gray; //rgba(white, 0.85);
+$navbar-color-hover: $dark-gray; //$white;
+$navbar-active-color: $dark-gray; //$white;
 $navbar-active-bg: $navbar-bg-hover;
-$navbar-active-shadow-small: inset 4px 0 0 0 var(--primary);
-$navbar-active-shadow-medium: inset 0 4px 0 0 var(--primary);
+$navbar-active-shadow-small: inset -4px 0 0 0 var(--primary);
+$navbar-active-shadow-medium: inset 0 -4px 0 0 var(--primary);
 
 $titlebar-bg: $white;
 
 /* Navigation */
 
 .navbar {
+  padding-top: 0.5rem;
   background: $navbar-bg;
+  border-bottom: 2px solid rgba(black, 0.075);
+  font-weight: 600;
+  .main-nav {
+    margin-bottom: -2px;
+  }
 }
 
 /* Title bar */

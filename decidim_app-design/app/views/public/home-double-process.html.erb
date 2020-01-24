@@ -3,23 +3,21 @@
 <%= partial "template_top" %>
 
 <main>
-  <section class="extended hero"
-    style="background-image:url(<%= image_path "hero-home.jpg" %>);">
-    <div class="hero__container">
+  <section class="extended hero-custom">
+    <div class="hero-custom__container">
       <div class="row">
-        <div class="columns small-centered large-10">
-          <h1 class="text-highlight heading1 hero-heading-sm">
-            Primers Pressupostos Participatius<br>de Barcelona
+        <div class="columns mediumlarge-7">
+          <h1 class="heading1 hero-custom__heading">
+            Primers Pressupostos Participatius de Barcelona
           </h1>
-          <%# <p>
+          <p class="heading5">
             Il·lustríssims Veïns i Veïnes, ja podeu presentar les vostres propostes de
             projectes del vostre districte.
-          </p> %>
+          </p>
+          <a class="hero-custom__cta button large button--sc" href="#">Participa!</a>
         </div>
-      </div>
-      <div class="row">
-        <div class="columns small-centered small-6 medium-4 mediumlarge-3">
-          <a class="hero-cta button expanded large button--sc" href="#">Participa!</a>
+        <div class="columns mediumlarge-4">
+          <img style="display: block; margin-top: -100px; transform: translateX(40px);" src="<%= image_path "silla.png" %>" alt="" />
         </div>
       </div>
     </div>
