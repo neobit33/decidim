@@ -17,9 +17,17 @@
     }
 
     @include breakpoint(large) {
-      padding: 8rem 0 5rem; //6rem at top and bottom, fix this
+      padding: 6rem 0;
     }
   }
+
+  &__main {
+    @include breakpoint(mediumlarge) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__heading {
     margin-bottom: 2rem;
     font-weight: 800;
@@ -29,5 +37,11 @@
     padding: 1.2rem 1rem;
     margin-top: 2rem;
     min-width: 16rem;
+  }
+
+  &__image {
+    min-height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
