@@ -10,6 +10,30 @@ PR [\#5676](https://github.com/decidim/decidim/pull/5676) introduced a deprecati
 
 ### Upgrade notes
 
+- **Omniauth settings for each tenant**
+
+Thanks to [\#5516](https://github.com/decidim/decidim/pull/5516) it is now possible to customize which omniauth providers are enabled on each of the organizations in a multitenant installation.
+
+This modification changes the way devise omniauth providers are activated. It is now automatic, so all providers declared in the secrets file are loaded into `Decidim::OmniauthProvider#available` and then activated in `Decidim::User` `devise` declaration.
+
+To make it clear, installations with custom Omniauth providers must remove the  provider configuration from the corresponding `config/initializer/omniauth_xxx.rb`:
+
+```
+# This block should be kept
+if Rails.application.secrets.dig(:omniauth, :decidim, :enabled)
+  Devise.setup do |config|
+    config.omniauth :decidim,
+                    Rails.application.secrets.dig(:omniauth, :decidim, :client_id),
+                    Rails.application.secrets.dig(:omniauth, :decidim, :client_secret),
+                    Rails.application.secrets.dig(:omniauth, :decidim, :site_url),
+                    scope: :public
+  end
+end
+
+# this line should be removed
+Decidim::User.omniauth_providers << :decidim
+```
+
 - **Assembly types**
 
 In order to prevent errors while upgrading multi-servers envirnoments, the fields `assembly_type` and `assembly_type_other` are maintained. Future releases will take care of this.
