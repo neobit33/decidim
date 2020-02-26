@@ -16,7 +16,8 @@ Thanks to [\#5516](https://github.com/decidim/decidim/pull/5516) it is now possi
 
 This modification changes the way devise omniauth providers are activated. It is now automatic, so all providers declared in the secrets file are loaded into `Decidim::OmniauthProvider#available` and then activated in `Decidim::User` `devise` declaration.
 
-To make it clear, installations with custom Omniauth providers must remove the  provider configuration from the corresponding `config/initializer/omniauth_xxx.rb`:
+To make it clear, installations with custom Omniauth providers must remove the provider configuration from the corresponding `config/initializer/omniauth_xxx.rb` (just remove the whole file if it is the only thing declared there). 
+The recommended way to go is to configure `config/secrets.yml` with the variables needed (can be filled with dummy data) and then go to `yourinstallation.tld/system` to configure the valid values for the tenant.
 
 ```
 # This block should be kept
