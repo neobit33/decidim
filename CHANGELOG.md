@@ -76,6 +76,7 @@ Thanks to [#5342](https://github.com/decidim/decidim/pull/5342), Decidim now sup
 - **decidim-proposals**: Let Valuators only answer and leave private notes on proposals [\#5687](https://github.com/decidim/decidim/pull/5687)
 - **decidim-core**: Let exporters filter collection by user triggering the action [\#5687](https://github.com/decidim/decidim/pull/5687)
 
+- **decidim-budgets**: Allow admins to upload add images to projects. [\#????](https://github.com/decidim/decidim/pull/????)
 **Changed**:
 
 - **decidim-core**: Shorten the 100 chars default last activity cards description lenght to 80 chars [\#5742](https://github.com/decidim/decidim/pull/5742)
